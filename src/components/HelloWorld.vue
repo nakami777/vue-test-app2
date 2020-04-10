@@ -2,8 +2,9 @@
   <div class="hello">
     <h1>{{ title }}</h1>
     <h2>{{ text }}</h2>
-    <h3>{{ ToDoList }}</h3>
-    <h3>{{ DoneList }}</h3>
+    <h3>{{ todoList }}</h3>
+    <h3>{{ doneList }}</h3>
+    <h4 v-show="showText">{{ showSampleText }}</h4>
   </div>
 </template>
 
@@ -14,8 +15,10 @@ export default {
     return {
       title: "Vue.js",
       text: "文法テスト編",
-      ToDoList: "v-if, v-for, v-bind, v-on, v-model, methods, computed, watch",
-      DoneList: "マスタッシュ記法, data"
+      todoList: "v-if, v-for, v-bind, v-on, v-model, methods, computed, watch",
+      doneList: "マスタッシュ記法, data",
+      showText: false,
+      showSampleText: "見えていますか？"
     };
   }
 };
