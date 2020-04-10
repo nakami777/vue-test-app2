@@ -5,6 +5,7 @@
     <h3>{{ todoList }}</h3>
     <h3>{{ doneList }}</h3>
     <h4 v-show="showText">{{ showSampleText }}</h4>
+    <button v-on:click="toggle">隠しボタン *絶対に押さないでね！*</button>
   </div>
 </template>
 
@@ -15,11 +16,16 @@ export default {
     return {
       title: "Vue.js",
       text: "文法テスト編",
-      todoList: "v-if, v-for, v-bind, v-on, v-model, methods, computed, watch",
-      doneList: "マスタッシュ記法, data",
+      todoList: "v-if, v-for, v-bind, v-model, computed, watch",
+      doneList: "マスタッシュ記法, data, v-on, methods",
       showText: false,
-      showSampleText: "見えていますか？"
+      showSampleText: "いやん///"
     };
+  },
+  methods: {
+    toggle: function() {
+      this.showText = !this.showText;
+    }
   }
 };
 </script>
